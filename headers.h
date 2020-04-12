@@ -9,5 +9,8 @@
 #ifndef headers_h
 #define headers_h
 #include <cstdio>
+#include <iostream>
+#include <map>
+#include <string>
 using namespace std;
 #endif /* headers_h */
