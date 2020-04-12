@@ -131,4 +131,5 @@ void init(map<string,int> &mp){
     mp["Ubn"]=3340;
     mp["Ubu"]=3030;
     mp["Ubb"]=3220;
+    mp["Ubt"]=3280;
 }
