@@ -24,6 +24,10 @@ int main(int argc,char** argv){
             return 0;
         }
         int res=Calculate(mp,argv[2]);
+        if(res==-1){
+            puts("-1");
+            return 0;
+        }
         if(!strcmp(argv[1],"-a")){
             printf("%d.%d\n",res/10,res%10);
         }else if(!strcmp(argv[1],"-at")){

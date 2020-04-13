@@ -21,7 +21,7 @@ int CalculateMol(map<string,int> &mp,const string &s){
         return -1;
     }
     int l=1;
-    while(l<(int)s.size()&&isupper(s[l])){
+    while(l<(int)s.size()&&islower(s[l])){
         l++;
     }
     if(l==(int)s.size()){
@@ -96,7 +96,7 @@ int Calculate(map<string,int> &mp,const string &s){
         if(!Split){
             return -1;
         }
-        int countL=CalculateSingle(mp,s.substr(0,Split-1));
+        int countL=CalculateSingle(mp,s.substr(0,Split));
         if(!~countL){
             return -1;
         }
