@@ -8,15 +8,15 @@
 
 #include "headers.h"
 
-void init(map<string,int>& mp,string str[][7]);
-map<string,int> mp;
+void init(map<string,int>& mp,string str[][7],map<string,int> &stu);
+map<string,int> mp,stu;
 string disp[15][7];
 
 int Calculate(map<string,int> &mp,const string &str);
 void StartUI(map<string,int> &mp,string str[][7]);
 
 int main(int argc,char** argv){
-    init(mp,disp);
+    init(mp,disp,stu);
     if(argc==1){
         StartUI(mp,disp);
     }else{

@@ -8,39 +8,39 @@
 
 #include "headers.h"
 
-void init(map<string,int> &mp,string str[][7]){
-    mp["H"]=10;
+void init(map<string,int> &mp,string str[][7],map<string,int> &stu){
+    mp["H"]=10;stu["H"]=10;
     mp["D"]=20;
     mp["T"]=30;
-    mp["He"]=40;
-    mp["Li"]=69;
-    mp["Be"]=90;
-    mp["B"]=108;
-    mp["C"]=120;
-    mp["N"]=140;
-    mp["O"]=160;
-    mp["F"]=190;
-    mp["Ne"]=202;
-    mp["Na"]=230;
-    mp["Mg"]=243;
-    mp["Al"]=270;
-    mp["Si"]=281;
-    mp["P"]=310;
-    mp["S"]=321;
-    mp["Cl"]=355;
-    mp["Ar"]=400;
-    mp["K"]=391;
-    mp["Ca"]=401;
+    mp["He"]=40;stu["He"]=40;
+    mp["Li"]=69;stu["Li"]=70;
+    mp["Be"]=90;stu["Be"]=90;
+    mp["B"]=108;stu["B"]=110;
+    mp["C"]=120;stu["C"]=120;
+    mp["N"]=140;stu["N"]=140;
+    mp["O"]=160;stu["O"]=160;
+    mp["F"]=190;stu["F"]=190;
+    mp["Ne"]=202;stu["Ne"]=200;
+    mp["Na"]=230;stu["Na"]=230;
+    mp["Mg"]=243;stu["Mg"]=240;
+    mp["Al"]=270;stu["Al"]=270;
+    mp["Si"]=281;stu["Si"]=280;
+    mp["P"]=310;stu["P"]=310;
+    mp["S"]=321;stu["S"]=320;
+    mp["Cl"]=355;stu["Cl"]=355;
+    mp["Ar"]=400;stu["Ar"]=400;
+    mp["K"]=391;stu["K"]=390;
+    mp["Ca"]=401;stu["Ca"]=400;
     mp["Sc"]=450;
     mp["Ti"]=479;
     mp["V"]=509;
     mp["Cr"]=520;
-    mp["Mn"]=549;
-    mp["Fe"]=559;
+    mp["Mn"]=549;stu["Mn"]=550;
+    mp["Fe"]=559;stu["Fe"]=560;
     mp["Co"]=589;
     mp["Ni"]=587;
-    mp["Cu"]=636;
-    mp["Zn"]=654;
+    mp["Cu"]=636;stu["Cu"]=640;
+    mp["Zn"]=654;stu["Zn"]=650;
     mp["Ga"]=697;
     mp["Ge"]=726;
     mp["As"]=750;
@@ -57,7 +57,7 @@ void init(map<string,int> &mp,string str[][7]){
     mp["Ru"]=1011;
     mp["Rh"]=1029;
     mp["Pd"]=1064;
-    mp["Ag"]=1079;
+    mp["Ag"]=1079;stu["Ag"]=1080;
     mp["Cd"]=1124;
     mp["In"]=1148;
     mp["Sn"]=1187;
@@ -66,7 +66,7 @@ void init(map<string,int> &mp,string str[][7]){
     mp["I"]=1269;
     mp["Xe"]=1313;
     mp["Cs"]=1329;
-    mp["Ba"]=1373;
+    mp["Ba"]=1373;stu["Ba"]=1370;
     mp["La"]=1389;
     mp["Ce"]=1401;
     mp["Pr"]=1409;
@@ -88,11 +88,11 @@ void init(map<string,int> &mp,string str[][7]){
     mp["Re"]=1862;
     mp["Os"]=1902;
     mp["Ir"]=1922;
-    mp["Pt"]=1951;
-    mp["Au"]=1970;
-    mp["Hg"]=2006;
+    mp["Pt"]=1951;stu["Pt"]=1950;
+    mp["Au"]=1970;stu["Au"]=1970;
+    mp["Hg"]=2006;stu["Hg"]=2010;
     mp["Tl"]=2044;
-    mp["Pb"]=2072;
+    mp["Pb"]=2072;stu["Pb"]=2070;
     mp["Bi"]=2090;
     mp["Po"]=2090;
     mp["At"]=2100;
