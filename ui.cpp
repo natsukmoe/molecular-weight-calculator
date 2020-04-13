@@ -37,7 +37,7 @@ void PrinttoOutput(string str[][7],string fis){
             mvwaddch(output,i,j,' ');
         }
     }
-    mvwprintw(output,0,0,"This molecule's weight is:");
+    mvwprintw(output,0,0,"This molecule's relative molecular weight is:");
     for(int i=2;i<9;i++){
         mvwprintw(output,i,0,fm[i-2].substr(1).c_str());
     }
