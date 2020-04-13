@@ -77,7 +77,7 @@ int CalculateMol(map<string,int> &mp,const string &s){
             }
             return wl*tms;
         }
-        int wl=GetAtomWeight(mp,s.substr(1,i-2));
+        int wl=CalculateMol(mp,s.substr(1,i-2));
         if(!~wl){
             return -1;
         }
