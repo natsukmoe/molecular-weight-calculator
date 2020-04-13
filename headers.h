@@ -12,5 +12,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <cctype>
+#define Maxweight 99999999
 using namespace std;
 #endif /* headers_h */

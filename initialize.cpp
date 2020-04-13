@@ -8,7 +8,7 @@
 
 #include "headers.h"
 
-void init(map<string,int> &mp,string **str){
+void init(map<string,int> &mp,string str[][7]){
     mp["H"]=10;
     mp["He"]=40;
     mp["Li"]=69;
