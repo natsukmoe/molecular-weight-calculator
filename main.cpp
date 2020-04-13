@@ -12,6 +12,8 @@ void init(map<string,int>& mp,string str[][7]);
 map<string,int> mp;
 string disp[12][7];
 
+int Calculate(map<string,int> &mp,const string &str);
+
 int main(int argc,char** argv){
     init(mp,disp);
     if(argc==1){
@@ -21,10 +23,11 @@ int main(int argc,char** argv){
             puts("0");
             return 0;
         }
+        int res=Calculate(mp,argv[2]);
         if(!strcmp(argv[1],"-a")){
-            printf("%d.%d\n",0,0);
-        }else{
-            printf("%d\n",0);
+            printf("%d.%d\n",res/10,res%10);
+        }else if(!strcmp(argv[1],"-at")){
+            printf("%d\n",res);
         }
     }
 }
