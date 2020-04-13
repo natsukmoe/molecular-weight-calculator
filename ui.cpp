@@ -13,7 +13,7 @@ namespace{
 WINDOW *output;
 }
 
-void PrinttoOutput(string str[][7],string fis){
+void PrinttoOutput(string str[][7],const string &fis,const string &fst){
     string fm[7];
     if(fis=="0.-1"){
         for(int i=0;i<7;i++){
@@ -32,7 +32,7 @@ void PrinttoOutput(string str[][7],string fis){
             }
         }
     }
-    for(int i=0;i<9;i++){
+    for(int i=0;i<11;i++){
         for(int j=0;j<COLS;j++){
             mvwaddch(output,i,j,' ');
         }
@@ -41,10 +41,11 @@ void PrinttoOutput(string str[][7],string fis){
     for(int i=2;i<9;i++){
         mvwprintw(output,i,0,fm[i-2].substr(1).c_str());
     }
+    mvwprintw(output,10,0,fst.c_str());
     wrefresh(output);
 }
 
-void StartUI(map<string,int> &mp,string str[][7]){
+void StartUI(map<string,int> &mp,map<string,int> &stu,string str[][7]){
     initscr();
     noecho();
     clear();
@@ -70,7 +71,7 @@ void StartUI(map<string,int> &mp,string str[][7]){
         mvwaddch(input,0,i,' ');
     }
     const int Fwid=COLS-PreSize;
-    output=newwin(9,COLS,6,0);
+    output=newwin(11,COLS,6,0);
     wrefresh(title);
     wrefresh(input);
     wmove(input,0,PreSize);
@@ -89,7 +90,14 @@ void StartUI(map<string,int> &mp,string str[][7]){
             }
             char tmp[15];
             sprintf(tmp,"%d.%d",ans/10,ans%10);
-            PrinttoOutput(str,tmp);
+            int ans2=Calculate(stu,Str);
+            char tmp2[45];
+            if(!~ans2){
+                tmp2[0]=0;
+            }else{
+                sprintf(tmp2,"Result in student mode: %d.%d",ans2/10,ans2%10);
+            }
+            PrinttoOutput(str,tmp,tmp2);
         }else if(ch=='\x11'){
             break;
         }else if(ch=='\x1b'||ch=='\xe0'){
