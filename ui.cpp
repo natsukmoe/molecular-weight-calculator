@@ -84,6 +84,9 @@ void StartUI(map<string,int> &mp,string str[][7]){
                 Str+=inputs[i];
             }
             int ans=Calculate(mp,Str);
+            if(Str==""){
+                ans=0;
+            }
             char tmp[15];
             sprintf(tmp,"%d.%d",ans/10,ans%10);
             PrinttoOutput(str,tmp);
