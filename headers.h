@@ -13,6 +13,8 @@
 #include <map>
 #include <string>
 #include <cctype>
+#include <vector>
+#include <curses.h>
 #define Maxweight 99999999
 using namespace std;
 #endif /* headers_h */

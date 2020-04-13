@@ -10,14 +10,15 @@
 
 void init(map<string,int>& mp,string str[][7]);
 map<string,int> mp;
-string disp[12][7];
+string disp[15][7];
 
 int Calculate(map<string,int> &mp,const string &str);
+void StartUI(map<string,int> &mp,string str[][7]);
 
 int main(int argc,char** argv){
     init(mp,disp);
     if(argc==1){
-        
+        StartUI(mp,disp);
     }else{
         if(argc==2){
             puts("0");
