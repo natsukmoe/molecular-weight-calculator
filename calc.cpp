@@ -17,6 +17,83 @@ int GetAtomWeight(map<string,int> &mp,const string &s){
 }
 
 int CalculateMol(map<string,int> &mp,const string &s){
+    if(s[0]=='('||s[0]=='['||s[0]=='{'||s[0]=='<'){
+        int as=0,bs=0,cs=0,ds=0;
+        if(s[0]=='('){
+            as++;
+        }else if(s[0]=='['){
+            bs++;
+        }else if(s[0]=='{'){
+            cs++;
+        }else{
+            ds++;
+        }
+        int i=1;
+        while(i<(int)s.size()&&(as||bs||cs||ds)){
+            if(s[i]=='('){
+                as++;
+            }else if(s[i]==')'){
+                as--;
+            }else if(s[i]=='['){
+                bs++;
+            }else if(s[i]==']'){
+                bs--;
+            }else if(s[i]=='{'){
+                cs++;
+            }else if(s[i]=='}'){
+                cs--;
+            }else if(s[i]=='<'){
+                ds++;
+            }else if(s[i]=='>'){
+                ds--;
+            }
+            if(as<0||bs<0||cs<0||ds<0){
+                return -1;
+            }
+            i++;
+        }
+        if(i==(int)s.size()&&(as||bs||cs||ds)){
+            return -1;
+        }
+        int j=i;
+        int tms=0;
+        while(j<(int)s.size()&&isdigit(s[j])){
+            tms=tms*10+s[j]-'0';
+            if(tms>Maxweight){
+                return -1;
+            }
+            j++;
+        }
+        if(!tms){
+            tms=1;
+        }
+        if(j==s.size()){
+            int wl=CalculateMol(mp,s.substr(1,i-2));
+            if(!~wl){
+                return -1;
+            }
+            if(1ll*tms*wl>Maxweight){
+                return -1;
+            }
+            return wl*tms;
+        }
+        int wl=GetAtomWeight(mp,s.substr(1,i-2));
+        if(!~wl){
+            return -1;
+        }
+        if(1ll*tms*wl>Maxweight){
+            return -1;
+        }
+        wl*=tms;
+        int wr=CalculateMol(mp,s.substr(j));
+        if(!~wr){
+            return -1;
+        }
+        if(wl+wr>Maxweight){
+            return -1;
+        }
+        return wl+wr;
+    }
     if(!isupper(s[0])){
         return -1;
     }
@@ -41,17 +118,26 @@ int CalculateMol(map<string,int> &mp,const string &s){
     }
     if(r==(int)s.size()){
         int wl=GetAtomWeight(mp,s.substr(0,l));
+        if(!~wl){
+            return -1;
+        }
         if(1ll*tms*wl>Maxweight){
             return -1;
         }
         return wl*tms;
     }
     int wl=GetAtomWeight(mp,s.substr(0,l));
+    if(!~wl){
+        return -1;
+    }
     if(1ll*tms*wl>Maxweight){
         return -1;
     }
     wl*=tms;
     int wr=CalculateMol(mp,s.substr(r));
+    if(!~wr){
+        return -1;
+    }
     if(wl+wr>Maxweight){
         return -1;
     }
@@ -90,6 +176,7 @@ int Calculate(map<string,int> &mp,const string &s){
     for(int i=0;i<s.size();i++){
         if(!isdigit(s[i])&&!isalpha(s[i])&&s[i]!='('&&s[i]!=')'&&s[i]!='['&&s[i]!=']'&&s[i]!='{'&&s[i]!='}'&&s[i]!='<'&&s[i]!='>'){
             Split=i;
+            break;
         }
     }
     if(~Split){

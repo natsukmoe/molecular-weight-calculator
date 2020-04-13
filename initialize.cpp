@@ -10,6 +10,8 @@
 
 void init(map<string,int> &mp,string str[][7]){
     mp["H"]=10;
+    mp["D"]=20;
+    mp["T"]=30;
     mp["He"]=40;
     mp["Li"]=69;
     mp["Be"]=90;
@@ -112,12 +114,12 @@ void init(map<string,int> &mp,string str[][7]){
     mp["Md"]=2580;
     mp["No"]=2590;
     mp["Lr"]=2620;
-    mp["Rf"]=2650;
-    mp["Db"]=2680;
-    mp["Sg"]=2710;
-    mp["Bh"]=2700;
-    mp["Hs"]=2770;
-    mp["Mt"]=2760;
+    mp["Rf"]=mp["Unq"]=2650;
+    mp["Db"]=mp["Unp"]=2680;
+    mp["Sg"]=mp["Unh"]=2710;
+    mp["Bh"]=mp["Uns"]=2700;
+    mp["Hs"]=mp["Uno"]=2770;
+    mp["Mt"]=mp["Une"]=2760;
     mp["Ds"]=mp["Uun"]=2810;
     mp["Rg"]=mp["Uuu"]=2800;
     mp["Cn"]=mp["Uub"]=2850;
@@ -181,11 +183,11 @@ void init(map<string,int> &mp,string str[][7]){
     str[5][5]=" ##      ## ";
     str[5][6]="   ######   ";
     
-    str[6][0]="     ##     ";
+    str[6][0]="     ###    ";
     str[6][1]="   ##       ";
     str[6][2]=" ##         ";
-    str[6][3]=" ## #####   ";
-    str[6][4]=" ###     ## ";
+    str[6][3]=" ########   ";
+    str[6][4]=" ##      ## ";
     str[6][5]=" ##      ## ";
     str[6][6]="   ######   ";
     
@@ -211,7 +213,7 @@ void init(map<string,int> &mp,string str[][7]){
     str[9][3]="   ######## ";
     str[9][4]="         ## ";
     str[9][5]="       ##   ";
-    str[9][6]="   ####     ";
+    str[9][6]="    ###     ";
     
     str[10][0]="       ";
     str[10][1]="       ";
