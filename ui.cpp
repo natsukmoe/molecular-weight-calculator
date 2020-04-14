@@ -65,6 +65,7 @@ void StartUI(map<string,int> &mp,map<string,int> &stu,string str[][7]){
     init_pair(1,COLOR_WHITE,COLOR_BLACK);
     init_pair(2,COLOR_BLACK,COLOR_WHITE);
     WINDOW *input=newwin(1,COLS,4,0);
+    keypad(input,1);
     Title="Molecule's name: ";
     wattron(input,COLOR_PAIR(1));
     mvwprintw(input,0,0,Title.c_str());
@@ -103,12 +104,14 @@ void StartUI(map<string,int> &mp,map<string,int> &stu,string str[][7]){
             PrinttoOutput(str,tmp,tmp2);
         }else if(ch=='\x11'){
             break;
-        }else if(ch=='\x1b'||ch=='\xe0'){
-            ch=wgetch(input);
-            if(ch=='['){
+        }else if(ch=='\x1b'||(ch>=2&&ch<=5)){
+            if(ch=='\x1b'){
                 ch=wgetch(input);
+                if(ch=='['){
+                    ch = wgetch(input);
+                }
             }
-            if(ch=='K'||ch=='D'){
+            if(ch==4||ch=='D'){
                 cursorpos--;
                 if(cursorpos<0){
                     cursorpos=0;
@@ -116,7 +119,7 @@ void StartUI(map<string,int> &mp,map<string,int> &stu,string str[][7]){
                 if(cursorpos-1<winl&&cursorpos){
                     winl=cursorpos-1;
                 }
-            }else if(ch=='M'||ch=='C'){
+            }else if(ch==5||ch=='C'){
                 cursorpos++;
                 if(cursorpos>(int)inputs.size()){
                     cursorpos=(int)inputs.size();
