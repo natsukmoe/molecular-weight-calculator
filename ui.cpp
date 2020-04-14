@@ -46,6 +46,9 @@ void PrinttoOutput(string str[][7],const string &fis,const string &fst){
 }
 
 void StartUI(map<string,int> &mp,map<string,int> &stu,string str[][7]){
+    #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    system("title Moecular Weight Calculator by Natsu Kinmoe");
+    #endif
     initscr();
     noecho();
     clear();
