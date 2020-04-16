@@ -81,3 +81,10 @@ Calculate the relative molecular weight of `[Name]` in student mode, and multipl
 
 在学生模式下计算`[Name]`的相对分子质量，乘10并输出（以防止出现小数部分）。
 
+
+
+## Used libs
+
+Program used `curses` lib on the UI.
+
+程序在用户界面上使用了`curses`库。
