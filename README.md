@@ -31,9 +31,9 @@ Program Shotcut:
 
 
 
-Note: the result in student mode is **really** for students, it only contains elements occuring in the calculating problems and it ignores most of the decimal parts (except `Cl`'s is also `35.5`), like `Cu`'s relative atomic weight is `64` in student mode, but in fact, it is `63.6`.
+Note: the result in student mode is **really** for students, it ignores most of the decimal parts (except `Cl`'s is also `35.5`), like `Cu`'s relative atomic weight is `64` in student mode, but in fact, it is `63.6`.
 
-注：其中的“Result in student mode”是为学生准备的结果，它只包含在计算题中常见的元素，并且省略了大部分的小数部分（除了氯的相对原子质量还是`35.5`），以符合各大考试卷的标准。比如，铜的相对原子质量在学生模式中是`64`，但是实际上是`63.6`。
+注：其中的“Result in student mode”是为学生准备的结果，它省略了大部分元素相对原子质量的小数部分（除了氯的相对原子质量还是`35.5`），以符合各大考试卷的标准。比如，铜的相对原子质量在学生模式中是`64`，但是实际上是`63.6`。
 
 
 
